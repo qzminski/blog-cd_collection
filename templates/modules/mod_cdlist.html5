@@ -7,16 +7,20 @@
 
   <?php if ($this->cds): foreach ($this->cds as $cd): ?>
   <div class="cd">
-  	<?php if ($cd['cover']): ?><figure class="cover"><?php echo $cd['cover']; ?></figure><?php endif; ?>
+    <?php if ($cd['cover']): ?><figure class="cover"><?php echo $cd['cover']; ?></figure><?php endif; ?>
 
+    <?php if ($cd['link']): ?>
+    <h3><a href="<?php echo $cd['link']; ?>"><?php echo $cd['title']; ?></a></h3>
+    <?php else: ?>
     <h3><?php echo $cd['title']; ?></h3>
+    <?php endif; ?>
 
     <p class="info"><?php echo $cd['artist']; ?> (<?php echo $cd['year']; ?>), <?php echo $cd['genre']; ?></p>
 
     <?php if ($cd['description']): ?>
-      <div class="description">
+    <div class="description">
       <?php echo $cd['description']; ?>
-      </div>
+    </div>
     <?php endif; ?>
   </div>
   <?php endforeach; endif; ?>

@@ -10,6 +10,7 @@ $GLOBALS['TL_DCA']['tl_cds'] = array
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
+		'ctable'                      => array('tl_cds_song'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -50,8 +51,14 @@ $GLOBALS['TL_DCA']['tl_cds'] = array
 			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_cds']['edit'],
-				'href'                => 'act=edit',
+				'href'                => 'table=tl_cds_song',
 				'icon'                => 'edit.gif'
+			),
+			'editheader' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_cds']['editheader'],
+				'href'                => 'act=edit',
+				'icon'                => 'header.gif'
 			),
 			'copy' => array
 			(

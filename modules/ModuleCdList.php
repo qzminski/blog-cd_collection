@@ -53,6 +53,19 @@ class ModuleCdList extends \Module
 			return;
 		}
 
+		$strLink = '';
+
+		// Generate a jumpTo link
+		if ($this->jumpTo > 0)
+		{
+			$objJump = \PageModel::findByPk($this->jumpTo);
+
+			if ($objJump !== null)
+			{
+				$strLink = $this->generateFrontendUrl($objJump->row(), '/items/%s');
+			}
+		}
+
 		$arrCds = array();
 
 		// Generate CDs
@@ -74,7 +87,8 @@ class ModuleCdList extends \Module
 				'genre' => $objCds->genre,
 				'year' => $objCds->year,
 				'cover' => $strCover,
-				'description' => $objCds->description
+				'description' => $objCds->description,
+				'link' => strlen($strLink) ? sprintf($strLink, $objCds->id) : ''
 			);
 		}
 

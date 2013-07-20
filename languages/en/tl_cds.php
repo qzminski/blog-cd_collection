@@ -21,8 +21,9 @@ $GLOBALS['TL_LANG']['tl_cds']['cover_legend'] = 'Cover and description';
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_cds']['new']    = array('New album', 'Add a new album');
-$GLOBALS['TL_LANG']['tl_cds']['show']   = array('Album details', 'Show the details of album ID %s');
-$GLOBALS['TL_LANG']['tl_cds']['edit']   = array('Edit album', 'Edit album ID %s');
-$GLOBALS['TL_LANG']['tl_cds']['copy']   = array('Copy album', 'Copy album ID %s');
-$GLOBALS['TL_LANG']['tl_cds']['delete'] = array('Delete album', 'Delete album ID %s');
+$GLOBALS['TL_LANG']['tl_cds']['new']        = array('New album', 'Add a new album');
+$GLOBALS['TL_LANG']['tl_cds']['show']       = array('Album details', 'Show the details of album ID %s');
+$GLOBALS['TL_LANG']['tl_cds']['edit']       = array('Edit album', 'Edit album ID %s');
+$GLOBALS['TL_LANG']['tl_cds']['editheader'] = array('Edit album settings', 'Edit album settings ID %s');
+$GLOBALS['TL_LANG']['tl_cds']['copy']       = array('Copy album', 'Copy album ID %s');
+$GLOBALS['TL_LANG']['tl_cds']['delete']     = array('Delete album', 'Delete album ID %s');
