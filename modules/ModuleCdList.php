@@ -45,10 +45,10 @@ class ModuleCdList extends \Module
 	 */
 	protected function compile()
 	{
-		$objCds = $this->Database->execute("SELECT * FROM tl_cds");
+		$objCds = \CdModel::findAll();
 
 		// Return if no CDs were found
-		if (!$objCds->numRows)
+		if ($objCds === null)
 		{
 			return;
 		}

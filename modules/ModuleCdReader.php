@@ -51,12 +51,10 @@ class ModuleCdReader extends \Module
 	 */
 	protected function compile()
 	{
-		$objCd = $this->Database->prepare("SELECT *, (SELECT COUNT(*) FROM tl_cds_song WHERE tl_cds_song.pid=tl_cds.id) AS songs FROM tl_cds WHERE id=?")
-								->limit(1)
-								->execute(\Input::get('items'));
+	    $objCd = \CdModel::findByPk(\Input::get('items'));
 
 		// Display a 404 page if the CD was not found
-		if (!$objCd->numRows)
+		if ($objCd === null)
 		{
 			global $objPage;
 			$objHandler = new $GLOBALS['TL_PTY']['error_404']();
@@ -76,16 +74,16 @@ class ModuleCdReader extends \Module
 			$this->Template->cover = \Image::getHtml(\Image::get($objCover->path, '100', '100', 'center_center'));
 		}
 
+        $objSongs = \CdSongModel::findByParent($objCd->id);
+
 		// Return if there are no songs
-		if (!$objCd->songs)
+		if ($objSongs === null)
 		{
 			return;
 		}
 
 		$count = 0;
 		$arrSongs = array();
-		$objSongs = $this->Database->prepare("SELECT * FROM tl_cds_song WHERE pid=? ORDER BY sorting")
-								   ->execute($objCd->id);
 
 		// Generate songs
 		while ($objSongs->next())

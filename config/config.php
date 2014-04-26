@@ -18,3 +18,10 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
  */
 $GLOBALS['FE_MOD']['miscellaneous']['cd_list']   = 'ModuleCdList';
 $GLOBALS['FE_MOD']['miscellaneous']['cd_reader'] = 'ModuleCdReader';
+
+
+/**
+ * Models
+ */
+$GLOBALS['TL_MODELS']['tl_cds']      = 'CdModel';
+$GLOBALS['TL_MODELS']['tl_cds_song'] = 'CdSongModel';

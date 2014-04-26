@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_cds'] = array
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
-			'sql'                     => "binary(16) NULL"
+			'sql'                     => "binary(16) NULL",
 		),
 		'description' => array
 		(
